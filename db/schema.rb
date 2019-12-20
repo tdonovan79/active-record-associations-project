@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2019_12_19_210555) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
+    t.integer "author_id"
+    t.integer "category_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -27,6 +29,8 @@ ActiveRecord::Schema.define(version: 2019_12_19_210555) do
   create_table "checkouts", force: :cascade do |t|
     t.datetime "due_date"
     t.boolean "return_status"
+    t.integer "user_id"
+    t.integer "book_id"
   end
 
   create_table "users", force: :cascade do |t|
